@@ -13,45 +13,60 @@ jobs:
         with:
           token: ${{ secrets.PERSONAL_TOKEN }}
           user: X-OH
-          config_timezone: Europe/Minsk
-#          config_display: columns  # отображать информацию по колонкам
+          config_timezone: Asia/Shanghai   # 改为中国时区（或保留 Europe/Minsk）
           committer_message: "chore: update metrics"
           template: classic
-          base: header, activity, community, repositories, metadata  # базовый контент (информация о пользователе)
-          plugin_introduction: yes  # общая информация о аккаунте
-#          plugin_sponsors: yes
+          base: header, activity, community, repositories, metadata
 
-          plugin_isocalendar: yes  # 3д изокалендарь
-          plugin_isocalendar_duration: full-year  # отображает активность за полный год
+          # ====== 基础插件 ======
+          plugin_introduction: yes
 
-          plugin_languages: yes  # отображение применяемых языков программирования
-          plugin_languages_details: bytes-size, percentage  # дополнительная информация о коде размер и процент
+          # ====== 日历 ======
+          plugin_calendar: yes
+          plugin_calendar_limit: 11
 
+          # ====== 3D 贡献日历（等距视图） ======
+          plugin_isocalendar: yes
+          plugin_isocalendar_duration: full-year
+
+          # ====== 编程语言统计 ======
+          plugin_languages: yes
+          plugin_languages_details: bytes-size, percentage
+          plugin_languages_limit: 8
+
+          # ====== 成就徽章 ======
           plugin_achievements: yes
+          plugin_achievements_threshold: 0      # 修改：X 改为数字（0 表示显示所有成就）
+          plugin_achievements_display: detailed
+          plugin_achievements_limit: 0
 
-          plugin_achievements_threshold: X  # (покажет фишки достижений которые еще не разблокированы)
-          plugin_achievements_display: detailed  # детальное описание фишек достижений
+          # ====== 编码习惯 ======
+          plugin_habits: yes
+          plugin_habits_facts: yes
+          plugin_habits_charts: yes
 
-          plugin_calendar: yes  # отображает активность по годам от текущего и далее
-          plugin_calendar_limit: 11 # отображает активность за столько лет
+          # ====== 许可证扫描（修复） ======
+          plugin_licenses: yes
+          # 删除 plugin_licenses_setup，因为仓库没有 package.json
+          # 或者保留但改为：plugin_licenses_setup: ""
 
-          plugin_habits: yes  # активность за сутки и неделю
-          plugin_habits_facts: yes  # отображает анализ вашей активность за неделю
-          plugin_habits_charts: yes  # отображает характеристики
+          # ====== Skyline（3D 年份图，如果继续报错可关闭） ======
+          plugin_skyline: yes
+          plugin_skyline_year: 2024             # 改为当前年份
+          plugin_skyline_frames: 120
+          plugin_skyline_quality: 1
 
-          plugin_licenses: yes  # информация о лицензиях
-          plugin_licenses_setup: npm ci  # подробная информация о применяемых лицензиях
+          # ====== Star 追踪 ======
+          plugin_stargazers: yes
+          plugin_stargazers_charts_type: chartist
 
-          plugin_skyline: yes  # плагин 3д активности скайлайн
-          plugin_skyline_year: 2022 # за какой год
-          plugin_skyline_frames: 120  # количество кадров
-          plugin_skyline_quality: 1  # качество 1 - лучшее
+          # ====== GitHub 支持 ======
+          plugin_support: yes
 
-          plugin_stargazers: yes  # активность за месяц
-          plugin_stargazers_charts_type: chartist  # тип активности - плавные линии
-
-          plugin_support: yes  # плагин поддержки
-
-          plugin_topics: yes  # плагин ипсользуемых тем
+          # ====== 热门 Topics ======
+          plugin_topics: yes
           plugin_topics_limit: 0
           plugin_topics_mode: icons
+
+          # ====== （可选）关闭世界地图，避免额外令牌错误 ======
+          # plugin_stargazers_worldmap: false   # 默认未开启，所以不需要加
