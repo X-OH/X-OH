@@ -89,7 +89,7 @@
 </div>
 
 <p align="center"> 
-<a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=X-OH" alt="X-OH" /></a>
+<a href="https://github.com/ryo-ma/github-profile-trophy"><img src="./images/trophy.svg" alt="GitHub Trophy" /></a>
 </p>
 
 
@@ -166,7 +166,7 @@ width="30%">
 #### Thanks for visiting :heart:
 
 <p align="center"> 
-<img src="https://profile-counter.glitch.me/X-OH/count.svg">  
+<img src="https://github-visitor-counter-tau.vercel.app/api?username=X-OH" alt="Visitors" />
 
 counting of visitors to this page in this section started from May 8, 2022
 <a href="http://s01.flagcounter.com/more/ap7"><img src="https://s01.flagcounter.com/countxl/ap7/bg_FFFFFF/txt_000000/border_CCCCCC/columns_8/maxflags_250/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
