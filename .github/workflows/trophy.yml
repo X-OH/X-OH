@@ -2,8 +2,8 @@ name: Update README images
 
 on:
   schedule:
-    - cron: "0 3 * * *"  # 每天凌晨3点更新
-  workflow_dispatch:     # 允许手动触发
+    - cron: "0 3 * * *"
+  workflow_dispatch:
 
 jobs:
   update:
@@ -12,14 +12,20 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v6
 
+      # 👇 新增：显式安装最新版 Deno（覆盖 v1 警告）
+      - name: Setup Deno
+        uses: denoland/setup-deno@v2
+        with:
+          deno-version: v2.x
+
       - name: Generate trophy
         uses: Erik-Donath/github-profile-trophy@feature/generate-svg
         with:
           username: X-OH
           token: ${{ secrets.GITHUB_TOKEN }}
-          file: images/trophy.svg   # 生成的图片将保存在此路径
-          theme: onedark            # 可指定主题
-          max-rows: 1               # 奖杯显示行数
+          file: images/trophy.svg
+          theme: onedark
+          max-rows: 1
 
       - name: Commit and push
         run: |
