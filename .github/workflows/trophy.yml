@@ -1,0 +1,30 @@
+name: Update README images
+
+on:
+  schedule:
+    - cron: "0 3 * * *"  # 每天凌晨3点更新
+  workflow_dispatch:     # 允许手动触发
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v6
+
+      - name: Generate trophy
+        uses: Erik-Donath/github-profile-trophy@feature/generate-svg
+        with:
+          username: X-OH
+          token: ${{ secrets.GITHUB_TOKEN }}
+          file: images/trophy.svg   # 生成的图片将保存在此路径
+          theme: onedark            # 可指定主题
+          max-rows: 1               # 奖杯显示行数
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git add images/trophy.svg
+          git commit -m "Update trophy image" || exit 0
+          git push
