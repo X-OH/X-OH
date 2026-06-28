@@ -69,4 +69,4 @@ jobs:
           plugin_topics_mode: icons
 
           # ====== （可选）关闭世界地图，避免额外令牌错误 ======
-          # plugin_stargazers_worldmap: false   # 默认未开启，所以不需要加
+          plugin_stargazers_worldmap: true   # 默认未开启，所以不需要加
