@@ -61,7 +61,7 @@
 ![X-OH's github activity graph](https://raw.githubusercontent.com/X-OH/X-OH/output/github-contribution-grid-snake-dark.svg)
 
 <!--   profile-green-animate -->
-![](./profile-3d-contrib/profile-green-animate.svg)
+![](./profile-3d-contrib/profile-season-animate.svg)
 
 <!--   grid-snake ![](https://github.com/X-OH/X-OH/blob/output/github-contribution-grid-snake.svg) -->
 
