@@ -72,7 +72,9 @@
 
 <!--  TOP codersrank для обновления картинки нужно обновить профиль на странице https://profile.codersrank.io/user/X-OH-->
 
-<img src="https://cr-summary-widget.azurewebsites.net/api/api?username=X-OH" width="auto"></img>
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/X-OH/X-OH)
+![GitHub repo size](https://img.shields.io/github/repo-size/X-OH/X-OH)
+[![X-OH's GitHub stats](https://github-readme-stats.vercel.app/api?username=X-OH)](https://github.com/anuraghazra/github-readme-stats)
 <!--  2d history skills для обновления картинки нужно обновить профиль на странице https://profile.codersrank.io/user/X-OH-->
 <img src="https://cr-skills-chart-widget.azurewebsites.net/api/api?username=X-OH&show-other-skills=true" width="auto"></img>
 
